@@ -1,0 +1,149 @@
+﻿body {
+    font-family : sans-serif;
+    font-size: 16px;
+    background-color:#ECF0F3;
+    background-image:url(../Imagenes/FondoBody.jpg);
+}
+
+#imgheader {
+    height:60px;
+    width:auto;
+}
+
+#header ul {
+    /*outline: 1px solid blue;*/
+    list-style:none;
+    padding:0;
+    margin:0;
+    background:#0E176B;
+    line-height:40px;
+    text-align:center;
+    border-style:solid;
+}
+
+#header ul li {
+    width:150px;
+    display:inline-block;
+}
+
+a {
+    text-decoration:none;
+    color:#ffffff;
+    display:block;
+}
+
+    a:hover {
+        background-color:#F9B994;
+        color:#000000;
+    }
+
+#seccion2 {
+    text-align:center;
+}
+
+#contenedor {
+    padding:5px;
+}
+
+.header {
+    display:inline-block;
+    width:33%;
+}
+
+.botonheader1 {
+    padding:10px;
+    margin:auto;
+    border:none;
+    background:#0AF9BA;
+    color:#000000;
+    border-radius:10px 10px 10px 10px;
+}
+.botonheader2 {
+    padding:10px;
+    margin:auto;
+    border:none;
+    background:#F94B0A;
+    color:#000000;
+    border-radius:10px 10px 10px 10px;
+}
+
+#seccion3 {
+    padding-left:13%;
+    width:85%;
+    margin:auto;
+    overflow:hidden;
+}
+
+    #seccion3 ul {
+        padding:0;
+        display:flex;
+        width:400%;
+
+        animation: cambio 20s infinite;
+    }
+
+    #seccion3 li {
+        list-style:none;
+        width:100%;
+    }
+
+    #seccion3 img {
+        width:60%;
+    }
+
+@keyframes cambio {
+    0% {margin-left:0%;}
+    20% {margin-left:0%;}
+
+    25% {margin-left:-135%;}
+    45% {margin-left:-135%;}
+
+    50% {margin-left:-265%;}
+    70% {margin-left:-265%;}
+
+    75% {margin-left:-265%;}
+    100% {margin-left:-265%;}
+
+}
+
+#ContenedorCursos {
+    padding:20px;
+    display:flex;
+    margin:auto;
+    text-align:center;
+}
+
+    #ContenedorCursos div {
+        width:25%;
+        margin:auto;
+        padding:5px;
+        border-radius:10px;
+    }
+        #ContenedorCursos div:hover {
+            width:35%;
+            background-color:#F6F911;
+        }
+
+
+#ContenedorCursos2 {
+    padding:20px;
+    display:flex;
+    margin:auto;
+    text-align:justify;
+}
+
+    #ContenedorCursos2 div {
+        width:25%;
+        margin:auto;
+        padding:5px;
+    }
+
+#footer {
+    background-color:#0E176B;
+    color:white;
+    text-align:center;
+    padding:10px;
+    margin:0;
+    height:70px;
+    font-size:12px;
+}
