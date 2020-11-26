@@ -55,16 +55,16 @@ public interface IService
     DataSet Mostrar_Cursos_Usuario(int Id_usuario, int ID_categoria);
 
     [OperationContract]
-    DataSet Insertar_Categoria(string nombre_cat);
+    DataSet Insertar_Categorias(string nombre_cat);
 
     [OperationContract]
-    DataSet Modificar_Categoria(int ID_Categoria, string nombre_cat);
+    DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat);
 
     [OperationContract]
     DataSet Eliminar_Categoria(int ID_Categoria, string nombre_cat);
 
     [OperationContract]
-    DataSet Consultar_Categoria();
+    DataSet Mostrar_Categorias();
 
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);

@@ -386,17 +386,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Insertar_Categoria">
+  <xs:element name="Insertar_Categorias">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="nombre_cat" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Insertar_CategoriaResponse">
+  <xs:element name="Insertar_CategoriasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Insertar_CategoriaResult" nillable="true">
+        <xs:element minOccurs="0" name="Insertar_CategoriasResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -412,7 +412,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Modificar_Categoria">
+  <xs:element name="Modificar_Categorias">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="ID_Categoria" type="xs:int" />
@@ -420,10 +420,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Modificar_CategoriaResponse">
+  <xs:element name="Modificar_CategoriasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Modificar_CategoriaResult" nillable="true">
+        <xs:element minOccurs="0" name="Modificar_CategoriasResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -466,15 +466,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Consultar_Categoria">
+  <xs:element name="Mostrar_Categorias">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="Consultar_CategoriaResponse">
+  <xs:element name="Mostrar_CategoriasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Consultar_CategoriaResult" nillable="true">
+        <xs:element minOccurs="0" name="Mostrar_CategoriasResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>

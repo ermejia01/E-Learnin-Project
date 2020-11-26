@@ -180,9 +180,9 @@ public class Service : IService
         return ds;
     }
 
-    public DataSet Insertar_Categoria(string nombre_cat)
+    public DataSet Insertar_Categorias(string nombre_cat)
     {
-        da = new SqlDataAdapter("Insertar_Categoria", conexion);
+        da = new SqlDataAdapter("Insertar_Categorias", conexion);
         da.SelectCommand.CommandType = CommandType.StoredProcedure;
         da.SelectCommand.Parameters.AddWithValue("@nombre_cat", nombre_cat);
         da.Fill(ds, "Categoria creada");
@@ -190,7 +190,7 @@ public class Service : IService
         return ds;
     }
 
-    public DataSet Modificar_Categoria(int ID_Categoria, string nombre_cat)
+    public DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat)
     {
         da = new SqlDataAdapter("Modificar_Categoria", conexion);
         da.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -211,10 +211,11 @@ public class Service : IService
         return ds;
     }
 
-    public DataSet Consultar_Categoria()
+    public DataSet Mostrar_Categorias()
     {
-        da = new SqlDataAdapter("Consultar_Categoria", conexion);
+        da = new SqlDataAdapter("Mostrar_Categorias", conexion);
         da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds,"Data de Categorias");
         return ds;
     }
 
