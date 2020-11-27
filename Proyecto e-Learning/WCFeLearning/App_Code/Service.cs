@@ -219,6 +219,20 @@ public class Service : IService
         return ds;
     }
 
+    public DataSet Insertar_Contenidos(string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo)
+    {
+        da = new SqlDataAdapter("Insertar_Contenidos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@Descripcion",Descripcion);
+        da.SelectCommand.Parameters.AddWithValue("@Tipo",tipo);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria",ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso",ID_Curso);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Tema",ID_Tema);
+        da.SelectCommand.Parameters.AddWithValue("@Archivo",archivo);
+        da.Fill(ds,"Contenido Insertado");
+        return ds;
+    }
+
     public DataSet Mostrar_Contenidos_XTemas(int ID_Tema)
     {
         da = new SqlDataAdapter("Mostrar_Contenido_XTema", conexion);
@@ -226,5 +240,19 @@ public class Service : IService
         da.SelectCommand.Parameters.AddWithValue("@ID_Tema",ID_Tema);
         da.Fill(ds,"Contenido de Tema");
         return ds;
+    }
+
+    public byte[] RetornarStringEnBytes(string valor)
+    {
+        byte[] cadena;
+        cadena = System.Text.Encoding.UTF8.GetBytes(valor);
+        return cadena;
+    }
+
+    public string RetornarByteEnString(byte[] valor)
+    {
+        string cadena;
+        cadena = System.Text.Encoding.UTF8.GetString(valor);
+        return cadena;
     }
 }

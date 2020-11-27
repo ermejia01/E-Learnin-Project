@@ -490,6 +490,37 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Insertar_Contenidos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID_Categoria" type="xs:int" />
+        <xs:element minOccurs="0" name="ID_Curso" type="xs:int" />
+        <xs:element minOccurs="0" name="ID_Tema" type="xs:int" />
+        <xs:element minOccurs="0" name="archivo" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insertar_ContenidosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Insertar_ContenidosResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Mostrar_Contenidos_XTemas">
     <xs:complexType>
       <xs:sequence>
@@ -513,6 +544,34 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarStringEnBytes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="valor" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarStringEnBytesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RetornarStringEnBytesResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarByteEnString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="valor" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetornarByteEnStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RetornarByteEnStringResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

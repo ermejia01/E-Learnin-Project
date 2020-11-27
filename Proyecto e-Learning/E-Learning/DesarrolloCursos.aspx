@@ -6,8 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Proyecto Vicky - Desarrollo del Curso</title>
-    <!--<link rel="stylesheet" type="text/css" href="/Estilos/EstilosPrincipalUsuario.css"/>-->
-    <link rel="stylesheet" type="text/css" href="/Estilos/EstilosPrincipalUsuario.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="/Estilos/EstilosSecundarioUsuario.css"/>-->
+    <link rel="stylesheet" type="text/css" href="/Estilos/EstilosSecundarioUsuario.css"/>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -55,10 +55,10 @@
                         </td>
                         <td>
                             <asp:Panel ID="pnContenido" runat="server">
-                                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                <asp:GridView ID="gdwContenidos" runat="server">
+                                <asp:Label ID="lblNombre_Tema" runat="server" Text="Elige tu contenido"></asp:Label>
+                                <asp:GridView ID="gdwContenidos" runat="server" OnRowCommand="gdwContenidos_RowCommand">
                                     <Columns>
-                                        <asp:ButtonField Text="Ver">
+                                        <asp:ButtonField Text="Ver" CommandName="Ver">
                                         <ControlStyle BorderStyle="None" />
                                         </asp:ButtonField>
                                     </Columns>
@@ -70,7 +70,18 @@
 
             </div>
             <div>
+                <div class="contenidos">
 
+                </div>
+                <div class="contenidos" id="MostrarContenido" runat="server">
+                                
+                </div>
+                <div class="contenidos">
+
+                </div>
+            </div>
+            <div>
+                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
             </div>
             <div class="footer">
                 Derechos reservados Proyecto Viky

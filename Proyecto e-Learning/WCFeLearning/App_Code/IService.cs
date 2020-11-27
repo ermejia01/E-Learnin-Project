@@ -67,5 +67,15 @@ public interface IService
     DataSet Mostrar_Categorias();
 
     [OperationContract]
+    DataSet Insertar_Contenidos(string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
+
+    [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);
+
+    [OperationContract]
+    Byte[] RetornarStringEnBytes(string valor);
+
+    [OperationContract]
+    string RetornarByteEnString(byte[] valor);
+
 }

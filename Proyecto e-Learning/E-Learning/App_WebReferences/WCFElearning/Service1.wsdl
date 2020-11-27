@@ -115,11 +115,29 @@
   <wsdl:message name="IService_Mostrar_Categorias_OutputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_CategoriasResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Insertar_Contenidos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Contenidos" />
+  </wsdl:message>
+  <wsdl:message name="IService_Insertar_Contenidos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_ContenidosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Mostrar_Contenidos_XTemas_InputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_Contenidos_XTemas" />
   </wsdl:message>
   <wsdl:message name="IService_Mostrar_Contenidos_XTemas_OutputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_Contenidos_XTemasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetornarStringEnBytes_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarStringEnBytes" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetornarStringEnBytes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarStringEnBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetornarByteEnString_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarByteEnString" />
+  </wsdl:message>
+  <wsdl:message name="IService_RetornarByteEnString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetornarByteEnStringResponse" />
   </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="Insertar_usuario">
@@ -194,9 +212,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Categorias" message="tns:IService_Mostrar_Categorias_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_CategoriasResponse" message="tns:IService_Mostrar_Categorias_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Insertar_Contenidos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Contenidos" message="tns:IService_Insertar_Contenidos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_ContenidosResponse" message="tns:IService_Insertar_Contenidos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Mostrar_Contenidos_XTemas">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Contenidos_XTemas" message="tns:IService_Mostrar_Contenidos_XTemas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_Contenidos_XTemasResponse" message="tns:IService_Mostrar_Contenidos_XTemas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarStringEnBytes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetornarStringEnBytes" message="tns:IService_RetornarStringEnBytes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetornarStringEnBytesResponse" message="tns:IService_RetornarStringEnBytes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarByteEnString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RetornarByteEnString" message="tns:IService_RetornarByteEnString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RetornarByteEnStringResponse" message="tns:IService_RetornarByteEnString_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -363,8 +393,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Insertar_Contenidos">
+      <soap:operation soapAction="http://tempuri.org/IService/Insertar_Contenidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Mostrar_Contenidos_XTemas">
       <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Contenidos_XTemas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarStringEnBytes">
+      <soap:operation soapAction="http://tempuri.org/IService/RetornarStringEnBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarByteEnString">
+      <soap:operation soapAction="http://tempuri.org/IService/RetornarByteEnString" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
