@@ -55,6 +55,9 @@ public interface IService
     DataSet Mostrar_Cursos_Usuario(int Id_usuario, int ID_categoria);
 
     [OperationContract]
+    DataSet Mostrar_Cursos_xCategoria(int ID_Categoria);
+
+    [OperationContract]
     DataSet Insertar_Categorias(string nombre_cat);
 
     [OperationContract]
@@ -68,6 +71,15 @@ public interface IService
 
     [OperationContract]
     DataSet Insertar_Contenidos(string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
+
+    [OperationContract]
+    DataSet Modificar_Contenidos(int ID_Contenido, string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
+
+    [OperationContract]
+    DataSet Mostrar_Contenidos();
+
+    [OperationContract]
+    DataSet Buscar_Contenidos(int ID_Contenido, string Descripcion);
 
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);

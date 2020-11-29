@@ -180,6 +180,15 @@ public class Service : IService
         return ds;
     }
 
+    public DataSet Mostrar_Cursos_xCategoria(int ID_Categoria)
+    {
+        da = new SqlDataAdapter("Mostrar_Cursos_xCategoria", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_Categoria", ID_Categoria);
+        da.Fill(ds,"DataCursos");
+        return ds;
+    }
+
     public DataSet Insertar_Categorias(string nombre_cat)
     {
         da = new SqlDataAdapter("Insertar_Categorias", conexion);
@@ -233,6 +242,37 @@ public class Service : IService
         return ds;
     }
 
+    public DataSet Modificar_Contenidos(int ID_Contenido, string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo)
+    {
+        da = new SqlDataAdapter("Modificar_Contenidos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_Contenido",ID_Contenido);
+        da.SelectCommand.Parameters.AddWithValue("@Descripcion", Descripcion);
+        da.SelectCommand.Parameters.AddWithValue("@Tipo", tipo);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso", ID_Curso);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Tema", ID_Tema);
+        da.SelectCommand.Parameters.AddWithValue("@Archivo", archivo);
+        da.Fill(ds, "Contenido Modificado");
+        return ds;
+    }
+
+    public DataSet Mostrar_Contenidos()
+    {
+        da = new SqlDataAdapter("Mostrar_Contenidos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+    public DataSet Buscar_Contenidos(int ID_Contenido, string Descripcion)
+    {
+        da = new SqlDataAdapter("Buscar_Contenidos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_Contenido",ID_Contenido);
+        da.SelectCommand.Parameters.AddWithValue("Descripcion",Descripcion);
+        da.Fill(ds,"ContenidoEncontrado");
+        return ds;
+    }
     public DataSet Mostrar_Contenidos_XTemas(int ID_Tema)
     {
         da = new SqlDataAdapter("Mostrar_Contenido_XTema", conexion);
