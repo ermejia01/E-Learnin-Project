@@ -160,4 +160,50 @@ public partial class ContenidoTemas : System.Web.UI.Page
             }
         }
     }
+
+    protected void btnBuscar_Click(object sender, EventArgs e)
+    {
+        if (txtID_Contenido.Text != "" | txtDescripcion.Text != "")
+        {
+            ds = ws.Buscar_Contenidos(int.Parse(txtID_Contenido.Text), txtDescripcion.Text);
+            if (ds.Tables.Count > 0)
+            {
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    txtID_Contenido.Text = ds.Tables[0].Rows[0]["ID_Contenido"].ToString();
+                    txtDescripcion.Text = ds.Tables[0].Rows[0]["Descripcion"].ToString();
+                    ddlTipo.Text = ds.Tables[0].Rows[0]["Tipo"].ToString();
+                    ddlCategoria.SelectedValue = ds.Tables[0].Rows[0]["ID_Categoria"].ToString();
+                    ddlCursos.SelectedValue = ds.Tables[0].Rows[0]["ID_Curso"].ToString();
+                    ddlTema.SelectedValue = ds.Tables[0].Rows[0]["ID_Tema"].ToString();
+                    txtArchivo.Text = ws.RetornarByteEnString((byte[])ds.Tables[0].Rows[0]["Archivo"]);
+                }
+                else
+                {
+                    lblMensajes.Text = "No se encontro ningun contenido";
+                }
+            }
+            else
+            {
+                lblMensajes.Text = "No se encontraron registros";
+            }
+        }
+
+    }
+
+    protected void btnModificar_Click(object sender, EventArgs e)
+    {
+        byte[] archivo;
+
+        archivo = ws.RetornarStringEnBytes(txtArchivo.Text);
+
+        ws.Modificar_Contenidos(int.Parse(txtID_Contenido.Text),txtDescripcion.Text, ddlTipo.Text, int.Parse(ddlCategoria.SelectedValue), int.Parse(ddlCursos.SelectedValue), int.Parse(ddlTema.SelectedValue), archivo);
+
+        Mostrar_Contenidos();
+
+        txtID_Contenido.Text = "";
+        txtDescripcion.Text = "";
+        ddlTipo.Text = "";
+        txtArchivo.Text = "";
+    }
 }

@@ -23,6 +23,7 @@
             <div class="bodycolumna">
                 <div class="bodycolumnaitems">
                     <div>
+                        <asp:Image ID="ImgVickyblanco" runat="server" Height="90px" ImageUrl="~/Imagenes/VikyBlanco.png" Width="124px" /><br />
                         <asp:Label ID="lblLogin" runat="server" Text="Ingresa tus Credenciales" Font-Bold="True" Font-Size="Large" ForeColor="#17ACCC"></asp:Label>
                     </div>
                     <div>
