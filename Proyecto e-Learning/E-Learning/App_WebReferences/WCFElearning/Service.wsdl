@@ -151,6 +151,30 @@
   <wsdl:message name="IService_Buscar_Contenidos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Buscar_ContenidosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Mostrar_Cursos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Mostrar_Cursos" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mostrar_Cursos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Mostrar_CursosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Insertar_Cursos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Cursos" />
+  </wsdl:message>
+  <wsdl:message name="IService_Insertar_Cursos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_CursosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Modificar_Cursos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Modificar_Cursos" />
+  </wsdl:message>
+  <wsdl:message name="IService_Modificar_Cursos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Modificar_CursosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Buscar_Cursos_InputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_Cursos" />
+  </wsdl:message>
+  <wsdl:message name="IService_Buscar_Cursos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_CursosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Mostrar_Contenidos_XTemas_InputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_Contenidos_XTemas" />
   </wsdl:message>
@@ -265,6 +289,22 @@
     <wsdl:operation name="Buscar_Contenidos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Contenidos" message="tns:IService_Buscar_Contenidos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_ContenidosResponse" message="tns:IService_Buscar_Contenidos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Mostrar_Cursos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Cursos" message="tns:IService_Mostrar_Cursos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_CursosResponse" message="tns:IService_Mostrar_Cursos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Cursos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Cursos" message="tns:IService_Insertar_Cursos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_CursosResponse" message="tns:IService_Insertar_Cursos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Modificar_Cursos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Modificar_Cursos" message="tns:IService_Modificar_Cursos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Modificar_CursosResponse" message="tns:IService_Modificar_Cursos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Cursos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Cursos" message="tns:IService_Buscar_Cursos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_CursosResponse" message="tns:IService_Buscar_Cursos_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Mostrar_Contenidos_XTemas">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Contenidos_XTemas" message="tns:IService_Mostrar_Contenidos_XTemas_InputMessage" />
@@ -490,6 +530,42 @@
     </wsdl:operation>
     <wsdl:operation name="Buscar_Contenidos">
       <soap:operation soapAction="http://tempuri.org/IService/Buscar_Contenidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mostrar_Cursos">
+      <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Cursos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Cursos">
+      <soap:operation soapAction="http://tempuri.org/IService/Insertar_Cursos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificar_Cursos">
+      <soap:operation soapAction="http://tempuri.org/IService/Modificar_Cursos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Cursos">
+      <soap:operation soapAction="http://tempuri.org/IService/Buscar_Cursos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

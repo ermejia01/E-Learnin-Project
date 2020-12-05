@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -134,8 +127,7 @@ public class Service : IService
         da.SelectCommand.Parameters.AddWithValue("@nombre_curso", nombre_curso);
         da.SelectCommand.Parameters.AddWithValue("@Estado", estado);
         da.SelectCommand.Parameters.AddWithValue("@ID_tema", ID_tema);
-        da.Fill(ds, "Curso Insertado");
-
+        da.Fill(ds, "Curso Insertado"); 
         return ds;
     }
 
@@ -233,6 +225,54 @@ public class Service : IService
     }
 
     #endregion
+
+     
+    #region Cursos
+
+    public DataSet Mostrar_Cursos()
+    {
+        da = new SqlDataAdapter("Mostrar_Cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+
+    public DataSet Insertar_Cursos(string nombre_curso, int ID_Categoria, int estado)
+    {
+        da = new SqlDataAdapter("Insertar_cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@nombre_curso", nombre_curso);
+        da.SelectCommand.Parameters.AddWithValue("@Estado", estado);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.Fill(ds, "Curso Insertado"); 
+        return ds;
+    }
+
+    public DataSet Modificar_Cursos(int ID_Cursos, string Descripcion, int ID_Categoria,  int estado)
+    {
+        da = new SqlDataAdapter("Modificar_Cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_curso", ID_Cursos);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_curso", Descripcion);
+        da.SelectCommand.Parameters.AddWithValue("@Estado", estado);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria); 
+        da.Fill(ds, "Contenido Modificado");
+        return ds;
+    }
+
+    public DataSet Buscar_Cursos(int ID_Cursos, string nombre_curso)
+    {
+        da = new SqlDataAdapter("Buscar_Cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_Cursos", ID_Cursos);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_Curso", nombre_curso);
+        da.Fill(ds, "Curso Encontrado");
+        return ds;
+    }
+
+
+    #endregion
+
 
     public DataSet Mostrar_Categorias()
     {

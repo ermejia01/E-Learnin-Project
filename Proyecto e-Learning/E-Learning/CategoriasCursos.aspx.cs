@@ -29,6 +29,11 @@ public partial class CategoriasCursos : System.Web.UI.Page
         else
         {
             ws.Insertar_Categorias(txtNombre_cat.Text);
+            Mostrar_Categorias();
+
+            txtNombre_cat.Text = "";
+            txtID_Cat.Text = ""; 
+
         }
     }
 

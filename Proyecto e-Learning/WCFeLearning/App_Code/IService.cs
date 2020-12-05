@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 using System.Data;
+using System.Drawing;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
 [ServiceContract]
@@ -71,7 +72,7 @@ public interface IService
 
     #endregion
 
-
+    #region Contenidos
 
     [OperationContract]
     DataSet Insertar_Contenidos(string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
@@ -80,10 +81,29 @@ public interface IService
     DataSet Modificar_Contenidos(int ID_Contenido, string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
 
     [OperationContract]
-    DataSet Mostrar_Contenidos();
+    DataSet Mostrar_Contenidos(); 
 
     [OperationContract]
     DataSet Buscar_Contenidos(int ID_Contenido, string Descripcion);
+
+    #endregion
+
+    #region Cursos
+
+    [OperationContract]
+    DataSet Mostrar_Cursos();
+
+    [OperationContract]
+    DataSet Insertar_Cursos(string nombre_curso,  int ID_Categoria, int estado);
+
+    [OperationContract]
+    DataSet Modificar_Cursos(int ID_Cursos,string nombre_curso, int ID_Categoria, int estado);
+
+    [OperationContract]
+    DataSet Buscar_Cursos(int ID_Categoria, string nombre_cat);
+
+    #endregion
+
 
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);
