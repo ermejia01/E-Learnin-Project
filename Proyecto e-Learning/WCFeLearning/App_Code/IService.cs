@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 using System.Data;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
@@ -43,7 +38,7 @@ public interface IService
     DataSet Insertar_curso(string nombre_curso, string estado, string ID_tema);
 
     [OperationContract]
-    DataSet Modificar_curso(int id_curso, string nombre_curso, string estado, string ID_tema);
+    DataSet Modificar_curso(int id_curso, string nombre_curso, string estado, string ID_tema); 
 
     [OperationContract]
     DataSet Eliminar_curso(int id_curso);
@@ -57,17 +52,26 @@ public interface IService
     [OperationContract]
     DataSet Mostrar_Cursos_xCategoria(int ID_Categoria);
 
-    [OperationContract]
-    DataSet Insertar_Categorias(string nombre_cat);
+    #region Categoria
 
-    [OperationContract]
-    DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat);
+        [OperationContract]
+        DataSet Insertar_Categorias(string nombre_cat);
 
-    [OperationContract]
-    DataSet Eliminar_Categoria(int ID_Categoria, string nombre_cat);
+        [OperationContract]
+        DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat);
 
-    [OperationContract]
-    DataSet Mostrar_Categorias();
+        [OperationContract]
+        DataSet Eliminar_Categoria(int ID_Categoria, string nombre_cat);
+
+        [OperationContract]
+        DataSet Mostrar_Categorias();
+
+        [OperationContract]
+        DataSet Buscar_Categoria(int ID_Categoria, string nombre_cat);
+
+    #endregion
+
+
 
     [OperationContract]
     DataSet Insertar_Contenidos(string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);

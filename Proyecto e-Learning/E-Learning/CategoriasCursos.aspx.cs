@@ -40,4 +40,38 @@ public partial class CategoriasCursos : System.Web.UI.Page
         gdwCategorias.DataMember = ds.Tables[0].TableName;
         gdwCategorias.DataBind();
     }
+
+    protected void btnModificar_Click(object sender, EventArgs e)
+    { 
+        ws.Modificar_Categorias(int.Parse(txtID_Cat.Text), txtNombre_cat.Text); 
+        Mostrar_Categorias(); 
+        txtID_Cat.Text = "";
+        txtNombre_cat.Text = ""; 
+
+    }
+
+    protected void btnBuscar_Click(object sender, EventArgs e)
+    {
+        if (txtID_Cat.Text != "" | txtNombre_cat.Text != "")
+        {
+            ds = ws.Buscar_Categoria(int.Parse(txtID_Cat.Text), txtNombre_cat.Text);
+            if (ds.Tables.Count > 0)
+            {
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    txtID_Cat.Text = ds.Tables[0].Rows[0]["ID_CATEGORIA"].ToString();
+                    txtNombre_cat.Text = ds.Tables[0].Rows[0]["NOMBRE_CAT"].ToString();
+                     
+                }
+                else
+                {
+                    lblMensaje.Text = "No se encontro ningun contenido";
+                }
+            }
+            else
+            {
+                lblMensaje.Text = "No se encontraron registros";
+            }
+        }
+    }
 }
