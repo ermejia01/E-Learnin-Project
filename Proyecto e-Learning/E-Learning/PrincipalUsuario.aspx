@@ -20,7 +20,8 @@
                 </ul>
             </nav>
             <nav style="float:right; padding-top:10px; margin-right:0;">
-                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
+                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>&nbsp
+                <asp:Button ID="btnCerrarSesion" runat="server" Font-Size="8pt" Height="23px" OnClick="btnCerrarSesion_Click" Text="Cerrar Sesion" Width="115px" />
             </nav>
         </div>
         <div class="ContenedorCursos">

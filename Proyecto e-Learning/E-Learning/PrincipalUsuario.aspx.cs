@@ -14,6 +14,7 @@ public partial class Principal : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
+        lblUsuario.Text = Session["Cod_Usuario"].ToString();
         Mostrar_Cursos_Usuario();
     }
 
@@ -122,5 +123,11 @@ public partial class Principal : System.Web.UI.Page
     protected void gdvCategoria2_RowCommand(object sender, GridViewCommandEventArgs e)
     {
 
+    }
+
+    protected void btnCerrarSesion_Click(object sender, EventArgs e)
+    {
+        Session["Cod_Usuario"] = null;
+        Response.Redirect("~/Login.aspx");
     }
 }

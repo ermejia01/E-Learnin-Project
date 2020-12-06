@@ -31,7 +31,8 @@
                 </ul>
             </nav>
             <nav style="float:right; padding-top:10px; margin-right:0;">
-                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
+                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>&nbsp
+                <asp:Button ID="btnCerrarSesion" runat="server" Font-Overline="False" Font-Size="8pt" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click" />
             </nav>
         </div>
         <div>
@@ -48,31 +49,31 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Usuarios" Width="286px" />
+                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Usuarios" Width="286px" OnClick="btnUsuarios_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnCat" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Categorias de Cursos" Width="286px" />
+                        <asp:Button ID="btnCat" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Categorias de Cursos" Width="286px" OnClick="btnCat_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnCursos" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Cursos" Width="286px" />
+                        <asp:Button ID="btnCursos" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Cursos" Width="286px" OnClick="btnCursos_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="Temas" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Temas" Width="286px" />
+                        <asp:Button ID="Temas" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Temas" Width="286px" OnClick="Temas_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnContenidos" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Contenidos" Width="286px" />
+                        <asp:Button ID="btnContenidos" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Contenidos" Width="286px" OnClick="btnContenidos_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>

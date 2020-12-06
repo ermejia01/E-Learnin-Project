@@ -25,6 +25,9 @@ public interface IService
     DataSet Consultar_Usuario();
 
     [OperationContract]
+    DataSet Validar_usuario(string Cod_Usuario, string pasword);
+
+    [OperationContract]
     DataSet Insertar_Tema(string nombre_tema);
 
     [OperationContract]

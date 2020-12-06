@@ -17,6 +17,7 @@ public class Service : IService
     SqlDataAdapter da;
 
     string conexion = ConfigurationManager.ConnectionStrings["conexionSQL"].ToString();
+    string patron = ConfigurationManager.AppSettings["Patron"].ToString();
 
     public DataSet Insertar_usuario(string Cod_usuario, string nombre, string apellido, int edad, string sexo, string fechanac, string pais, string depto, string telefono, string email, string pasword, string fecharegistro)
     {
@@ -75,6 +76,17 @@ public class Service : IService
         da.SelectCommand.CommandType = CommandType.StoredProcedure;
         da.Fill(ds, "Data de usuario");
 
+        return ds;
+    }
+
+    public DataSet Validar_usuario(string Cod_Usuario, string pasword)
+    {
+        da = new SqlDataAdapter("Validar_usuario",conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@Patron",patron);
+        da.SelectCommand.Parameters.AddWithValue("@Cod_Usuario", Cod_Usuario);
+        da.SelectCommand.Parameters.AddWithValue("@pasword", pasword);
+        da.Fill(ds,"UsuarioValidado");
         return ds;
     }
 
