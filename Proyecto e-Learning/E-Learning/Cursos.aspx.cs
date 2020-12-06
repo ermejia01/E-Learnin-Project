@@ -153,4 +153,9 @@ public partial class Cursos : System.Web.UI.Page
     {
         Response.Redirect("ContenidoTemas.aspx");
     }
+
+    protected void Temas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Temas.aspx");
+    }
 }

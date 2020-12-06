@@ -270,9 +270,55 @@ public class Service : IService
         return ds;
     }
 
-
     #endregion
 
+
+    #region Temas
+    public DataSet Mostrar_Temas()
+    {
+        da = new SqlDataAdapter("Mostrar_Temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+
+    public DataSet Insertar_Temas(string nombre_tema, int ID_Curso, int ID_Categoria)
+    {
+        da = new SqlDataAdapter("Insertar_temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@nombre_tema", nombre_tema); 
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso", ID_Curso);
+        da.Fill(ds, "Tema Insertado");
+        return ds;
+    } 
+
+    public DataSet Modificar_Temas(int ID_tema,string nombre_tema, int ID_Curso, int ID_Categoria)
+    {
+        da = new SqlDataAdapter("Modificar_temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@ID_tema", ID_tema);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_tema", nombre_tema);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso", ID_Curso);
+        da.Fill(ds, "tema modificado");
+
+        return ds;
+    }
+
+    public DataSet Buscar_Temas(int ID_tema, string nombre_tema)
+    {
+        da = new SqlDataAdapter("Buscar_Temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_tema", ID_tema);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_Tema", nombre_tema);
+        da.Fill(ds, "Tema Encontrado");
+        return ds;
+    }
+
+
+
+    #endregion
 
     public DataSet Mostrar_Categorias()
     {

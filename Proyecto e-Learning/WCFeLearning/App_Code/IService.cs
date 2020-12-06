@@ -105,6 +105,24 @@ public interface IService
     #endregion
 
 
+    #region Temas 
+
+    [OperationContract]
+    DataSet Mostrar_Temas();
+
+    [OperationContract]
+    DataSet Insertar_Temas( string nombre_tema, int ID_Curso, int ID_Categoria );
+
+    [OperationContract]
+    DataSet Modificar_Temas(int ID_tema, string nombre_tema, int ID_Curso, int ID_Categoria);
+
+    [OperationContract]
+    DataSet Buscar_Temas(int ID_tema, string nombre_tema);
+
+
+    #endregion
+
+
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);
 

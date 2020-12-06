@@ -175,6 +175,30 @@
   <wsdl:message name="IService_Buscar_Cursos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Buscar_CursosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Mostrar_Temas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Mostrar_Temas" />
+  </wsdl:message>
+  <wsdl:message name="IService_Mostrar_Temas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Mostrar_TemasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Insertar_Temas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_Temas" />
+  </wsdl:message>
+  <wsdl:message name="IService_Insertar_Temas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insertar_TemasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Modificar_Temas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Modificar_Temas" />
+  </wsdl:message>
+  <wsdl:message name="IService_Modificar_Temas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Modificar_TemasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_Buscar_Temas_InputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_Temas" />
+  </wsdl:message>
+  <wsdl:message name="IService_Buscar_Temas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Buscar_TemasResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_Mostrar_Contenidos_XTemas_InputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_Contenidos_XTemas" />
   </wsdl:message>
@@ -305,6 +329,22 @@
     <wsdl:operation name="Buscar_Cursos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Cursos" message="tns:IService_Buscar_Cursos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_CursosResponse" message="tns:IService_Buscar_Cursos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Mostrar_Temas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Temas" message="tns:IService_Mostrar_Temas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_TemasResponse" message="tns:IService_Mostrar_Temas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Temas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Temas" message="tns:IService_Insertar_Temas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_TemasResponse" message="tns:IService_Insertar_Temas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Modificar_Temas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Modificar_Temas" message="tns:IService_Modificar_Temas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Modificar_TemasResponse" message="tns:IService_Modificar_Temas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Temas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Temas" message="tns:IService_Buscar_Temas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_TemasResponse" message="tns:IService_Buscar_Temas_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Mostrar_Contenidos_XTemas">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Contenidos_XTemas" message="tns:IService_Mostrar_Contenidos_XTemas_InputMessage" />
@@ -566,6 +606,42 @@
     </wsdl:operation>
     <wsdl:operation name="Buscar_Cursos">
       <soap:operation soapAction="http://tempuri.org/IService/Buscar_Cursos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mostrar_Temas">
+      <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Temas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_Temas">
+      <soap:operation soapAction="http://tempuri.org/IService/Insertar_Temas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificar_Temas">
+      <soap:operation soapAction="http://tempuri.org/IService/Modificar_Temas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buscar_Temas">
+      <soap:operation soapAction="http://tempuri.org/IService/Buscar_Temas" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
