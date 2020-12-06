@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 using System.Data;
+using System.Drawing;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de interfaz "IService1" en el código y en el archivo de configuración a la vez.
 [ServiceContract]
@@ -46,7 +42,7 @@ public interface IService
     DataSet Insertar_curso(string nombre_curso, string estado, string ID_tema);
 
     [OperationContract]
-    DataSet Modificar_curso(int id_curso, string nombre_curso, string estado, string ID_tema);
+    DataSet Modificar_curso(int id_curso, string nombre_curso, string estado, string ID_tema); 
 
     [OperationContract]
     DataSet Eliminar_curso(int id_curso);
@@ -60,17 +56,26 @@ public interface IService
     [OperationContract]
     DataSet Mostrar_Cursos_xCategoria(int ID_Categoria);
 
-    [OperationContract]
-    DataSet Insertar_Categorias(string nombre_cat);
+    #region Categoria
 
-    [OperationContract]
-    DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat);
+        [OperationContract]
+        DataSet Insertar_Categorias(string nombre_cat);
 
-    [OperationContract]
-    DataSet Eliminar_Categoria(int ID_Categoria, string nombre_cat);
+        [OperationContract]
+        DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat);
 
-    [OperationContract]
-    DataSet Mostrar_Categorias();
+        [OperationContract]
+        DataSet Eliminar_Categoria(int ID_Categoria, string nombre_cat);
+
+        [OperationContract]
+        DataSet Mostrar_Categorias();
+
+        [OperationContract]
+        DataSet Buscar_Categoria(int ID_Categoria, string nombre_cat);
+
+    #endregion
+
+    #region Contenidos
 
     [OperationContract]
     DataSet Insertar_Contenidos(string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
@@ -79,10 +84,65 @@ public interface IService
     DataSet Modificar_Contenidos(int ID_Contenido, string Descripcion, string tipo, int ID_Categoria, int ID_Curso, int ID_Tema, byte[] archivo);
 
     [OperationContract]
-    DataSet Mostrar_Contenidos();
+    DataSet Mostrar_Contenidos(); 
 
     [OperationContract]
     DataSet Buscar_Contenidos(int ID_Contenido, string Descripcion);
+
+    #endregion
+
+    #region Cursos
+
+    [OperationContract]
+    DataSet Mostrar_Cursos();
+
+    [OperationContract]
+    DataSet Insertar_Cursos(string nombre_curso,  int ID_Categoria, int estado);
+
+    [OperationContract]
+    DataSet Modificar_Cursos(int ID_Cursos,string nombre_curso, int ID_Categoria, int estado);
+
+    [OperationContract]
+    DataSet Buscar_Cursos(int ID_Categoria, string nombre_cat);
+
+    #endregion
+
+
+    #region Temas 
+
+    [OperationContract]
+    DataSet Mostrar_Temas();
+
+    [OperationContract]
+    DataSet Insertar_Temas( string nombre_tema, int ID_Curso, int ID_Categoria );
+
+    [OperationContract]
+    DataSet Modificar_Temas(int ID_tema, string nombre_tema, int ID_Curso, int ID_Categoria);
+
+    [OperationContract]
+    DataSet Buscar_Temas(int ID_tema, string nombre_tema);
+
+
+    #endregion
+
+
+
+
+    #region Privilegios
+    [OperationContract]
+    DataSet Mostrar_Privilegios();
+
+    [OperationContract]
+    DataSet Insertar_Privilegio(string nombre_privilegio);
+
+    [OperationContract]
+    DataSet Modificar_Privilegio(int ID_Privilegio, string nombre_Privilegio );
+
+    [OperationContract]
+    DataSet Buscar_Privilegio(int ID_priv, string nombre_priv);
+
+    #endregion
+
 
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);

@@ -31,12 +31,6 @@
   <wsdl:message name="IService_Consultar_Usuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:Consultar_UsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_Validar_usuario_InputMessage">
-    <wsdl:part name="parameters" element="tns:Validar_usuario" />
-  </wsdl:message>
-  <wsdl:message name="IService_Validar_usuario_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Validar_usuarioResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_Insertar_Tema_InputMessage">
     <wsdl:part name="parameters" element="tns:Insertar_Tema" />
   </wsdl:message>
@@ -186,10 +180,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Consultar_Usuario" message="tns:IService_Consultar_Usuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Consultar_UsuarioResponse" message="tns:IService_Consultar_Usuario_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Validar_usuario">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Validar_usuario" message="tns:IService_Validar_usuario_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Validar_usuarioResponse" message="tns:IService_Validar_usuario_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="Insertar_Tema">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Tema" message="tns:IService_Insertar_Tema_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_TemaResponse" message="tns:IService_Insertar_Tema_OutputMessage" />
@@ -310,15 +300,6 @@
     </wsdl:operation>
     <wsdl:operation name="Consultar_Usuario">
       <soap:operation soapAction="http://tempuri.org/IService/Consultar_Usuario" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Validar_usuario">
-      <soap:operation soapAction="http://tempuri.org/IService/Validar_usuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -64,16 +64,16 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Usuarios" Width="286px" />
-                    </td>
+                              <asp:Button ID="btnUsuarios" runat="server" OnClick="Usuarios_Click" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt"  ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                     </td>
                     <td colspan="3">
                         <asp:Label ID="Label1" runat="server" BorderStyle="None" Font-Bold="True" Font-Size="12pt" Font-Underline="True" Text="Categorias de Cursos"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        <asp:Button ID="btnCat" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Categorias de Cursos" Width="286px" />
-                    </td>
+                    <td class="auto-style3"> 
+                         <asp:Button ID="btnCat" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Categorias de Cursos" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Categoria_Click" />
+                     </td>
                     <td class="auto-style6">
                         <asp:Label ID="lblID_Categoria" runat="server" Text="ID de la Categoria:" Font-Bold="True"></asp:Label>
                     </td>
@@ -85,7 +85,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:Button ID="btnCursos" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Cursos" Width="286px" />
+                         <asp:Button ID="btnCursos" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Cursos" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Cursos_Click" />
                     </td>
                     <td class="auto-style5">
                         <asp:Label ID="lblNombre_Cat" runat="server" Text="Nombre de la Categoria:" Font-Bold="True"></asp:Label>
@@ -97,18 +97,18 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="Temas" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Temas" Width="286px" />
-                    </td>
+                        <asp:Button ID="Temas" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Temas" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Temas_Click" />
+                     </td>
                     <td colspan="3" class="auto-style8">
                         <asp:Button ID="btnAgregar" runat="server" BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" Text="Agregar" Font-Size="12pt" OnClick="btnAgregar_Click" />&nbsp 
-                        <asp:Button ID="btnModificar" runat="server" BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" Text="Modificar" Font-Size="12pt" />&nbsp
-                        <asp:Button ID="btnBuscar" runat="server" BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" Text="Buscar" Font-Size="12pt" />
+                        <asp:Button ID="btnModificar" runat="server" BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" Text="Modificar" Font-Size="12pt" OnClick="btnModificar_Click" />&nbsp
+                        <asp:Button ID="btnBuscar" runat="server" BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" Text="Buscar" Font-Size="12pt"  OnClick="btnBuscar_Click"/>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnContenidos" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Contenidos" Width="286px" />
-                    </td>
+                        <asp:Button ID="btnContenidos" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Contenidos" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Contenido_Click" />
+                     </td>
                     <td colspan="3" class="auto-style7" rowspan="4">
                         <asp:GridView ID="gdwCategorias" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                             <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -125,13 +125,13 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnPrivilegios" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px" Text="Privilegios" Width="286px" />
-                    </td>
+                         <asp:Button ID="btnPrivilegios" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Privilegios" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                      </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnReportes" runat="server" BackColor="#00EEEE" BorderStyle="None" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="#000099" Height="60px"  Text="Reportes " Width="286px" />
-                    </td>
+                        <asp:Button ID="btnReportes" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px"  Text="Reportes " Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>

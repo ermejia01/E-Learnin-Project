@@ -71,7 +71,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Usuarios_Click" />
                     </td>
                     <td colspan="2">
                         <asp:Label ID="Label1" runat="server" BorderStyle="None" Font-Bold="True" Font-Size="13pt" Font-Underline="True" Text="Contenidos "></asp:Label>
@@ -79,7 +79,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnCat" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Categorias de Cursos" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                        <asp:Button ID="btnCat" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Categorias de Cursos" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Categoria_Click" />
                     </td>
                     <td class="auto-style12">
                         <asp:Label ID="lblID_Contenido" runat="server" Text="ID Contenido: "></asp:Label>
@@ -94,7 +94,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:Button ID="btnCursos" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Cursos" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                        <asp:Button ID="btnCursos" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Cursos" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Cursos_Click" />
                     </td>
                     <td class="auto-style10">
                         <asp:Label ID="lblCurso" runat="server" Text="Curso: "></asp:Label>
@@ -110,7 +110,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="Temas" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Temas" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                        <asp:Button   runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Temas" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Temas_Click" />
                     </td>
                     <td colspan="2">
                         &nbsp
@@ -125,7 +125,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnContenidos" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Contenidos" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                        <asp:Button ID="btnContenidos" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Contenidos" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Contenido_Click" />
                     </td>
                     <td class="auto-style11">
                         <asp:Label ID="Label2" runat="server" Text="Archivo:   "></asp:Label>

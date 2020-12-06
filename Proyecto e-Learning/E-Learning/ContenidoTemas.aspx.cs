@@ -206,4 +206,29 @@ public partial class ContenidoTemas : System.Web.UI.Page
         ddlTipo.Text = "";
         txtArchivo.Text = "";
     }
+
+    protected void Cursos_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Cursos.aspx");
+    }
+
+    protected void Categoria_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CategoriasCursos.aspx");
+    }
+
+    protected void Contenido_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ContenidoTemas.aspx");
+    }
+
+    protected void Temas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Temas.aspx");
+    }
+
+    protected void Usuarios_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegistroUsuario.aspx");
+    }
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
@@ -146,8 +139,7 @@ public class Service : IService
         da.SelectCommand.Parameters.AddWithValue("@nombre_curso", nombre_curso);
         da.SelectCommand.Parameters.AddWithValue("@Estado", estado);
         da.SelectCommand.Parameters.AddWithValue("@ID_tema", ID_tema);
-        da.Fill(ds, "Curso Insertado");
-
+        da.Fill(ds, "Curso Insertado"); 
         return ds;
     }
 
@@ -201,6 +193,8 @@ public class Service : IService
         return ds;
     }
 
+    #region Categoria
+
     public DataSet Insertar_Categorias(string nombre_cat)
     {
         da = new SqlDataAdapter("Insertar_Categorias", conexion);
@@ -213,10 +207,10 @@ public class Service : IService
 
     public DataSet Modificar_Categorias(int ID_Categoria, string nombre_cat)
     {
-        da = new SqlDataAdapter("Modificar_Categoria", conexion);
+        da = new SqlDataAdapter("Modificar_Categorias", conexion);
         da.SelectCommand.CommandType = CommandType.StoredProcedure;
-        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
-        da.SelectCommand.Parameters.AddWithValue("@nombre_cat", nombre_cat);
+        da.SelectCommand.Parameters.AddWithValue("@ID_cat", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@Nombre_cat", nombre_cat);
         da.Fill(ds, "Categoria modificada");
 
         return ds;
@@ -231,6 +225,152 @@ public class Service : IService
 
         return ds;
     }
+
+    public DataSet Buscar_Categoria(int ID_Categoria, string nombre_cat)
+    {
+        da = new SqlDataAdapter("Buscar_Categoria", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_Cat", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_Cat", nombre_cat);
+        da.Fill(ds, "Categoria Encontrada");
+        return ds;
+    }
+
+    #endregion
+
+     
+    #region Cursos
+
+    public DataSet Mostrar_Cursos()
+    {
+        da = new SqlDataAdapter("Mostrar_Cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+
+    public DataSet Insertar_Cursos(string nombre_curso, int ID_Categoria, int estado)
+    {
+        da = new SqlDataAdapter("Insertar_cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@nombre_curso", nombre_curso);
+        da.SelectCommand.Parameters.AddWithValue("@Estado", estado);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.Fill(ds, "Curso Insertado"); 
+        return ds;
+    }
+
+    public DataSet Modificar_Cursos(int ID_Cursos, string Descripcion, int ID_Categoria,  int estado)
+    {
+        da = new SqlDataAdapter("Modificar_Cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_curso", ID_Cursos);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_curso", Descripcion);
+        da.SelectCommand.Parameters.AddWithValue("@Estado", estado);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria); 
+        da.Fill(ds, "Contenido Modificado");
+        return ds;
+    }
+
+    public DataSet Buscar_Cursos(int ID_Cursos, string nombre_curso)
+    {
+        da = new SqlDataAdapter("Buscar_Cursos", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_Cursos", ID_Cursos);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_Curso", nombre_curso);
+        da.Fill(ds, "Curso Encontrado");
+        return ds;
+    }
+
+    #endregion
+
+
+    #region Temas
+    public DataSet Mostrar_Temas()
+    {
+        da = new SqlDataAdapter("Mostrar_Temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+
+    public DataSet Insertar_Temas(string nombre_tema, int ID_Curso, int ID_Categoria)
+    {
+        da = new SqlDataAdapter("Insertar_temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@nombre_tema", nombre_tema); 
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso", ID_Curso);
+        da.Fill(ds, "Tema Insertado");
+        return ds;
+    } 
+
+    public DataSet Modificar_Temas(int ID_tema,string nombre_tema, int ID_Curso, int ID_Categoria)
+    {
+        da = new SqlDataAdapter("Modificar_temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@ID_tema", ID_tema);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_tema", nombre_tema);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Categoria", ID_Categoria);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso", ID_Curso);
+        da.Fill(ds, "tema modificado");
+
+        return ds;
+    }
+
+    public DataSet Buscar_Temas(int ID_tema, string nombre_tema)
+    {
+        da = new SqlDataAdapter("Buscar_Temas", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_tema", ID_tema);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_Tema", nombre_tema);
+        da.Fill(ds, "Tema Encontrado");
+        return ds;
+    }
+
+    #endregion
+
+    #region Privilegio
+    public DataSet Mostrar_Privilegios()
+    {
+        da = new SqlDataAdapter("Mostrar_Privilegios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+
+    public DataSet Insertar_Privilegio(string nombre_privilegio )
+    {
+        da = new SqlDataAdapter("Insertar_Privilegio", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@nombre_priv", nombre_privilegio); 
+        da.Fill(ds, "Privilegio Insertado");
+        return ds;
+    }
+
+    public DataSet Modificar_Privilegio(int ID_Privilegio, string nombre_Privilegio )
+    {
+        da = new SqlDataAdapter("Modificar_Privilegios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@ID_priv", ID_Privilegio);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_priv", nombre_Privilegio); 
+        da.Fill(ds, "Privilegio modificado");
+
+        return ds;
+    }
+
+    public DataSet Buscar_Privilegio(int ID_priv, string nombre_priv)
+    {
+        da = new SqlDataAdapter("Buscar_Privilegio", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_priv", ID_priv);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_priv", nombre_priv);
+        da.Fill(ds, "Privilegio Encontrado");
+        return ds;
+    }
+
+    #endregion
+
 
     public DataSet Mostrar_Categorias()
     {
