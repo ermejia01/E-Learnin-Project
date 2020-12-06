@@ -123,6 +123,24 @@ public interface IService
     #endregion
 
 
+
+
+    #region Privilegios
+    [OperationContract]
+    DataSet Mostrar_Privilegios();
+
+    [OperationContract]
+    DataSet Insertar_Privilegio(string nombre_privilegio);
+
+    [OperationContract]
+    DataSet Modificar_Privilegio(int ID_Privilegio, string nombre_Privilegio );
+
+    [OperationContract]
+    DataSet Buscar_Privilegio(int ID_priv, string nombre_priv);
+
+    #endregion
+
+
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);
 

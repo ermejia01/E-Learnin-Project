@@ -318,6 +318,48 @@ public class Service : IService
 
     #endregion
 
+    #region Privilegio
+    public DataSet Mostrar_Privilegios()
+    {
+        da = new SqlDataAdapter("Mostrar_Privilegios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataContenidos");
+        return ds;
+    }
+
+    public DataSet Insertar_Privilegio(string nombre_privilegio )
+    {
+        da = new SqlDataAdapter("Insertar_Privilegio", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@nombre_priv", nombre_privilegio); 
+        da.Fill(ds, "Privilegio Insertado");
+        return ds;
+    }
+
+    public DataSet Modificar_Privilegio(int ID_Privilegio, string nombre_Privilegio )
+    {
+        da = new SqlDataAdapter("Modificar_Privilegios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@ID_priv", ID_Privilegio);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_priv", nombre_Privilegio); 
+        da.Fill(ds, "Privilegio modificado");
+
+        return ds;
+    }
+
+    public DataSet Buscar_Privilegio(int ID_priv, string nombre_priv)
+    {
+        da = new SqlDataAdapter("Buscar_Privilegio", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("ID_priv", ID_priv);
+        da.SelectCommand.Parameters.AddWithValue("Nombre_priv", nombre_priv);
+        da.Fill(ds, "Privilegio Encontrado");
+        return ds;
+    }
+
+    #endregion
+
+
     public DataSet Mostrar_Categorias()
     {
         da = new SqlDataAdapter("Mostrar_Categorias", conexion);
