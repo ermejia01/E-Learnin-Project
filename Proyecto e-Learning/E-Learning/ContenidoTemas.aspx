@@ -71,7 +71,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                        <asp:Button ID="btnUsuarios" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" OnClick="Usuarios_Click" />
                     </td>
                     <td colspan="2">
                         <asp:Label ID="Label1" runat="server" BorderStyle="None" Font-Bold="True" Font-Size="13pt" Font-Underline="True" Text="Contenidos "></asp:Label>

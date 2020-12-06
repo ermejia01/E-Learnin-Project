@@ -226,4 +226,9 @@ public partial class ContenidoTemas : System.Web.UI.Page
     {
         Response.Redirect("Temas.aspx");
     }
+
+    protected void Usuarios_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegistroUsuario.aspx");
+    }
 }

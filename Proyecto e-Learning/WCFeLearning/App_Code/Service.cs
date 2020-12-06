@@ -316,8 +316,6 @@ public class Service : IService
         return ds;
     }
 
-
-
     #endregion
 
     public DataSet Mostrar_Categorias()

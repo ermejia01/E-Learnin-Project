@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                              <asp:Button ID="btnUsuarios" runat="server" OnClick="IrUsuarios_Click" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt"  ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
+                              <asp:Button ID="btnUsuarios" runat="server" OnClick="Usuarios_Click" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt"  ForeColor="White" Height="60px" Text="Usuarios" Width="286px" BorderColor="Aqua" BorderWidth="1px" />
                      </td>
                     <td colspan="3">
                         <asp:Label ID="Label1" runat="server" BorderStyle="None" Font-Bold="True" Font-Size="12pt" Font-Underline="True" Text="Categorias de Cursos"></asp:Label>

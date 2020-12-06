@@ -80,11 +80,7 @@ public partial class CategoriasCursos : System.Web.UI.Page
         }
     }
 
-    protected void IrUsuarios_Click(object sender, EventArgs e)
-    {
-        //Response.Redirect("Page.aspx");
-    }
-
+     
     protected void Cursos_Click(object sender, EventArgs e)
     {
         Response.Redirect("Cursos.aspx");
@@ -103,5 +99,10 @@ public partial class CategoriasCursos : System.Web.UI.Page
     protected void Temas_Click(object sender, EventArgs e)
     {
         Response.Redirect("Temas.aspx");
+    }
+
+    protected void Usuarios_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegistroUsuario.aspx");
     }
 }

@@ -210,4 +210,9 @@ public partial class Temas : System.Web.UI.Page
             lblMensajes.Text = "No se encontraron Datos de Cursos";
         }
     }
+
+    protected void Usuarios_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegistroUsuario.aspx");
+    }
 }
