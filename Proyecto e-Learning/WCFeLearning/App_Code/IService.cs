@@ -106,8 +106,7 @@ public interface IService
     DataSet Buscar_Cursos(int ID_Categoria, string nombre_cat);
 
     #endregion
-
-
+     
     #region Temas 
 
     [OperationContract]
@@ -124,10 +123,7 @@ public interface IService
 
 
     #endregion
-
-
-
-
+     
     #region Privilegios
     [OperationContract]
     DataSet Mostrar_Privilegios();
@@ -143,6 +139,21 @@ public interface IService
 
     #endregion
 
+
+    #region Usuarios
+    [OperationContract]
+    DataSet Mostrar_Usuarios();
+
+    [OperationContract]
+    DataSet Insertar_Usuarios(string cod_usuario, string nombre_usuario, string apellido_usuario, int edad, string sexo, DateTime fecha_nac, string pais, string depto, string telefono, string email, string clave, string image_usuario, int id_privilegio, DateTime fecharegistro);
+
+    [OperationContract]
+    DataSet Modificar_Usuarios(string cod_usuario, string nombre_usuario, string apellido_usuario, int edad, string sexo, DateTime fecha_nac, string pais, string depto, string telefono, string email, string clave, string image_usuario, int id_privilegio, DateTime fecharegistro);
+    
+    [OperationContract]
+    DataSet Buscar_Usuarios(string cod_usuario);
+
+    #endregion
 
     [OperationContract]
     DataSet Mostrar_Contenidos_XTemas(int ID_Tema);
