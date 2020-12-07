@@ -34,6 +34,10 @@
         .auto-style8 {
             text-align: left;
         }
+        .auto-style9 {
+            width: 381px;
+            height: 43px;
+        }
     </style>
 </head>
 <body>
@@ -48,6 +52,7 @@
             </nav>
             <nav style="float:right; padding-top:10px; margin-right:0;">
                 <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
+                    <asp:Button ID="btnCerrarSesion" runat="server" Font-Overline="False" Font-Size="8pt" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click" />
             </nav>
         </div>
         <div>
@@ -130,11 +135,10 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnReportes" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px"  Text="Reportes " Width="286px" BorderColor="Aqua" BorderWidth="1px" />
-                     </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>

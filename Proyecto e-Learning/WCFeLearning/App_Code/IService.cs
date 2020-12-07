@@ -153,4 +153,9 @@ public interface IService
     [OperationContract]
     string RetornarByteEnString(byte[] valor);
 
+    [OperationContract]
+    DataSet Registro_usuario(string Cod_usuario, string nombre, string apellido, int edad, string sexo, string fechanac, string pais, string depto, string telefono, string email, string pasword);
+
+    [OperationContract]
+    DataSet Insertar_Inscripciones(int enviado, int ID_Usuario, int ID_Curso);
 }

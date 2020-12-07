@@ -20,12 +20,13 @@ public partial class DesarrolloCursos : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         CargarTemas();
+        lblUsuario.Text = Session["Cod_Usuario"].ToString();
 
     }
 
     public void CargarTemas()
     {
-        ds = ws.Mostrar_Temas_xCursos(3);
+        ds = ws.Mostrar_Temas_xCursos(int.Parse(Session["ID_Curso"].ToString()));
 
         if (ds != null)
         {
@@ -33,6 +34,7 @@ public partial class DesarrolloCursos : System.Web.UI.Page
             {
                 if (ds.Tables[0].Rows.Count > 0)
                 {
+                    lblNombreCurso.Text = Session["Nombre_Curso"].ToString();
                     gdwTemas.Visible = true;
                     gdwTemas.DataSource = ds;
                     gdwTemas.DataMember = ds.Tables[0].TableName;
@@ -49,8 +51,10 @@ public partial class DesarrolloCursos : System.Web.UI.Page
         {
             int indicefila = int.Parse(e.CommandArgument.ToString());
 
-            ds = ws.Mostrar_Temas_xCursos(3);
+            ds = ws.Mostrar_Temas_xCursos(int.Parse(Session["ID_Curso"].ToString()));
             int ID_Tema = int.Parse(ds.Tables[0].Rows[indicefila]["ID_Tema"].ToString());
+
+            Session["ID_Tema"] = ID_Tema;
 
             DataSet contenidos = new DataSet();
 
@@ -73,28 +77,55 @@ public partial class DesarrolloCursos : System.Web.UI.Page
         {
             int indicefila = int.Parse(e.CommandArgument.ToString());
 
-            ds = ws.Mostrar_Contenidos_XTemas(1);
+            DataSet dsTemas = new DataSet();
+            dsTemas = ws.Mostrar_Temas_xCursos(int.Parse(Session["ID_Curso"].ToString()));
+            int ID_Tema;
 
-            byte[] Archivobyte = (byte[])ds.Tables[0].Rows[indicefila]["Archivo"];
-
-            string archivo;
-
-            archivo = ws.RetornarByteEnString(Archivobyte);
-            string tipo = ds.Tables[0].Rows[indicefila]["Tipo"].ToString();
-
-            if (tipo == "Video")
+            if (dsTemas.Tables.Count > 0)
             {
-                cadena = "<iframe src = " + archivo + ">" + "</iframe>";
-                strbcadena.Append(cadena);
-                this.MostrarContenido.InnerHtml = cadena.ToString();
-            }
+                if (dsTemas.Tables[0].Rows.Count > 0)
+                {
+                    ID_Tema = int.Parse(dsTemas.Tables[0].Rows[indicefila]["ID_Tema"].ToString());
+                    ds = ws.Mostrar_Contenidos_XTemas(int.Parse(Session["ID_Tema"].ToString()));
 
-            if (tipo == "Texto")
-            {
-                cadena = "<p>"+archivo+"</p>";
-                strbcadena.Append(cadena);
-                this.MostrarContenido.InnerHtml = cadena.ToString();
+                    byte[] Archivobyte = (byte[])ds.Tables[0].Rows[indicefila]["Archivo"];
+
+                    string archivo;
+
+                    archivo = ws.RetornarByteEnString(Archivobyte);
+                    string tipo = ds.Tables[0].Rows[indicefila]["Tipo"].ToString();
+
+                    if (tipo == "Video")
+                    {
+                        cadena = "<iframe height="+"400px"+" width=" + "500px"+" src = " + archivo + ">" + "</iframe>";
+                        strbcadena.Append(cadena);
+                        this.MostrarContenido.InnerHtml = cadena.ToString();
+                    }
+
+                    if (tipo == "Texto")
+                    {
+                        cadena = "<p>" + archivo + "</p>";
+                        strbcadena.Append(cadena);
+                        this.MostrarContenido.InnerHtml = cadena.ToString();
+                    }
+
+                }
+                else
+                {
+                    lblMensaje.Text = "No existen Contenidos para este Tema";
+                }
             }
         }
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/PrincipalUsuario.aspx");
+    }
+
+    protected void btnCerrarSesion_Click(object sender, EventArgs e)
+    {
+        Session["Cod_Usuario"] = null;
+        Response.Redirect("~/Login.aspx");
     }
 }

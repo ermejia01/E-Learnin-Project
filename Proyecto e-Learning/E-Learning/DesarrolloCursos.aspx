@@ -12,6 +12,21 @@
         .auto-style1 {
             width: 100%;
         }
+        .auto-style2 {
+            height: 22px;
+        }
+        .auto-style3 {
+            padding: 20px;
+            display: inline-block;
+            width: 23%;
+            height: 100px;
+        }
+        .auto-style4 {
+            padding: 20px;
+            display: inline-block;
+            width: 33%;
+            height: 270px;
+        }
     </style>
 
 </head>
@@ -26,7 +41,8 @@
                     </ul>
                 </nav>
                 <nav style="float:right; padding-top:10px; margin-right:0;">
-                    <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
+                    <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>&nbsp
+                    <asp:Button ID="btnCerrarSesion" runat="server" Font-Overline="False" Font-Size="8pt" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click" />
                 </nav>
             </div>
             <div>
@@ -35,7 +51,7 @@
                     <tr>
                         <td>
                             <asp:Panel ID="pnTemas" runat="server">
-                                <asp:Label ID="lblTemas" runat="server" Text="Sql para Principiantes"></asp:Label>
+                                <asp:Label ID="lblNombreCurso" runat="server"></asp:Label>
                                 <asp:GridView ID="gdwTemas" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" CellPadding="4" ShowHeader="False" OnRowCommand="gdwTemas_RowCommand">
                                     <Columns>
                                         <asp:ButtonField CommandName="Ver" Text="Ver" />
@@ -70,10 +86,10 @@
 
             </div>
             <div>
-                <div class="contenidos">
+                <div class="auto-style3">
 
                 </div>
-                <div class="contenidos" id="MostrarContenido" runat="server">
+                <div class="auto-style4" id="MostrarContenido" runat="server">
                                 
                 </div>
                 <div class="contenidos">
@@ -82,6 +98,46 @@
             </div>
             <div>
                 <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+            </div>
+            <div>
+
+                <table class="auto-style1">
+                    <tr>
+                        <td class="auto-style2"></td>
+                        <td class="auto-style2"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Button ID="Button1" runat="server" BackColor="White" BorderStyle="Solid" BorderWidth="0px" Font-Bold="True" Font-Underline="True" ForeColor="#0099CC" Height="27px" OnClick="Button1_Click" Text="Regresar a los Cursos" Width="220px" />
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+
             </div>
             <div class="footer">
                 Derechos reservados Proyecto Viky

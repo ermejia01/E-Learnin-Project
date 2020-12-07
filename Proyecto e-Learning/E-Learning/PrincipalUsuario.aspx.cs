@@ -11,6 +11,8 @@ public partial class Principal : System.Web.UI.Page
 {
     DataSet ds = new DataSet();
     ServiceClient ws = new ServiceClient();
+    DataSet dsInscripcion = new DataSet();
+    int enviado = 0;
     
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -20,8 +22,7 @@ public partial class Principal : System.Web.UI.Page
 
     public void Mostrar_Cursos_Usuario()
     {
-
-        ds = ws.Mostrar_Cursos_Usuario(1,1);
+        ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()),1);
 
         if (ds != null)
         {
@@ -43,7 +44,7 @@ public partial class Principal : System.Web.UI.Page
         else
             lblMensaje1.Text = "No se encontraron datos";
 
-        ds = ws.Mostrar_Cursos_Usuario(1, 2);
+        ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 2);
         if (ds != null)
         {
             if (ds.Tables.Count > 0)
@@ -65,7 +66,7 @@ public partial class Principal : System.Web.UI.Page
             lblMensaje2.Text = "No se encontro datos";
 
 
-        ds = ws.Mostrar_Cursos_Usuario(1, 3);
+        ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 3);
         if (ds != null)
         {
             if (ds.Tables.Count > 0)
@@ -86,7 +87,7 @@ public partial class Principal : System.Web.UI.Page
         else
             lblMensaje3.Text = "No se encontro datos";
 
-        ds = ws.Mostrar_Cursos_Usuario(1, 4);
+        ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 4);
         if (ds != null)
         {
             if (ds.Tables.Count > 0)
@@ -112,22 +113,321 @@ public partial class Principal : System.Web.UI.Page
     {
         if (e.CommandName == "Inscribir")
         {
-            Response.Redirect("~/ValidacionInscripcion.aspx");
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+            
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 1);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            lblInscripcion.Text = "Ya estas inscrito al Curso Seleccionado";
+                        }
+                        else
+                        {
+                            dsInscripcion = ws.Insertar_Inscripciones(enviado,int.Parse(Session["ID_Usuario"].ToString()),ID_Curso);
+                            Response.Redirect("~/ValidacionInscripcion.aspx");
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
         }
         if (e.CommandName == "Ver")
         {
-            Response.Redirect("~/DesarrolloCursos.aspx");
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 1);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+                        string Descripcion = ds.Tables[0].Rows[indicefila]["NOMBRE"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            Session["ID_Curso"] = ID_Curso;
+                            Session["Nombre_Curso"] = Descripcion;
+                            Response.Redirect("~/DesarrolloCursos.aspx");
+                            lblInscripcion.Text = "";
+                        }
+                        else
+                        {
+                            lblInscripcion.Text = "No estas Inscrito al curso seleccionado";
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
         }
     }
 
     protected void gdvCategoria2_RowCommand(object sender, GridViewCommandEventArgs e)
     {
+        if (e.CommandName == "Inscribir")
+        {
+            int indicefila = int.Parse(e.CommandArgument.ToString());
 
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 2);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            lblInscripcion.Text = "Ya estas inscrito al Curso Seleccionado";
+                        }
+                        else
+                        {
+                            dsInscripcion = ws.Insertar_Inscripciones(enviado, int.Parse(Session["ID_Usuario"].ToString()), ID_Curso);
+                            Response.Redirect("~/ValidacionInscripcion.aspx");
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
+        }
+        if (e.CommandName == "Ver")
+        {
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 2);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+                        string Descripcion = ds.Tables[0].Rows[indicefila]["NOMBRE"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            Session["ID_Curso"] = ID_Curso;
+                            Session["Nombre_Curso"] = Descripcion;
+                            Response.Redirect("~/DesarrolloCursos.aspx");
+                            lblInscripcion.Text = "";
+                        }
+                        else
+                        {
+                            lblInscripcion.Text = "No estas Inscrito al curso seleccionado";
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
+        }
     }
 
     protected void btnCerrarSesion_Click(object sender, EventArgs e)
     {
         Session["Cod_Usuario"] = null;
         Response.Redirect("~/Login.aspx");
+    }
+
+    protected void gdvCategoria3_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Inscribir")
+        {
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 3);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            lblInscripcion.Text = "Ya estas inscrito al Curso Seleccionado";
+                        }
+                        else
+                        {
+                            dsInscripcion = ws.Insertar_Inscripciones(enviado, int.Parse(Session["ID_Usuario"].ToString()), ID_Curso);
+                            Response.Redirect("~/ValidacionInscripcion.aspx");
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
+        }
+        if (e.CommandName == "Ver")
+        {
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 3);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+                        string Descripcion = ds.Tables[0].Rows[indicefila]["NOMBRE"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            Session["ID_Curso"] = ID_Curso;
+                            Session["Nombre_Curso"] = Descripcion;
+                            Response.Redirect("~/DesarrolloCursos.aspx");
+                            lblInscripcion.Text = "";
+                        }
+                        else
+                        {
+                            lblInscripcion.Text = "No estas Inscrito al curso seleccionado";
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
+        }
+    }
+
+    protected void gdvCategoria4_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "Inscribir")
+        {
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 4);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            lblInscripcion.Text = "Ya estas inscrito al Curso Seleccionado";
+                        }
+                        else
+                        {
+                            dsInscripcion = ws.Insertar_Inscripciones(enviado, int.Parse(Session["ID_Usuario"].ToString()), ID_Curso);
+                            Response.Redirect("~/ValidacionInscripcion.aspx");
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
+        }
+        if (e.CommandName == "Ver")
+        {
+            int indicefila = int.Parse(e.CommandArgument.ToString());
+
+            ds = ws.Mostrar_Cursos_Usuario(int.Parse(Session["ID_Usuario"].ToString()), 4);
+            if (ds != null)
+            {
+                if (ds.Tables.Count > 0)
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        int ID_Curso = int.Parse(ds.Tables[0].Rows[indicefila]["CODIGO"].ToString());
+                        string Estado = ds.Tables[0].Rows[indicefila]["ESTADO"].ToString();
+                        string Descripcion = ds.Tables[0].Rows[indicefila]["NOMBRE"].ToString();
+
+                        if (Estado == "Inscrito")
+                        {
+                            Session["ID_Curso"] = ID_Curso;
+                            Session["Nombre_Curso"] = Descripcion;
+                            Response.Redirect("~/DesarrolloCursos.aspx");
+                            lblInscripcion.Text = "";
+                        }
+                        else
+                        {
+                            lblInscripcion.Text = "No estas Inscrito al curso seleccionado";
+                        }
+
+                    }
+                }
+                else
+                {
+                    lblMensaje1.Text = "No se encontraron Datos";
+                }
+            }
+            else
+            {
+                lblMensaje1.Text = "No se Cargo la Consulta";
+            }
+        }
     }
 }

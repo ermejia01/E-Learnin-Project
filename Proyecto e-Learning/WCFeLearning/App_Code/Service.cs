@@ -447,4 +447,36 @@ public class Service : IService
         cadena = System.Text.Encoding.UTF8.GetString(valor);
         return cadena;
     }
+
+    public DataSet Registro_usuario(string Cod_usuario, string nombre, string apellido, int edad, string sexo, string fechanac, string pais, string depto, string telefono, string email, string pasword)
+    {
+        da = new SqlDataAdapter("Registro_usuario", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@Patron",patron);
+        da.SelectCommand.Parameters.AddWithValue("@Cod_usuario", Cod_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@nombre", nombre);
+        da.SelectCommand.Parameters.AddWithValue("@Apellido", apellido);
+        da.SelectCommand.Parameters.AddWithValue("@Edad", edad);
+        da.SelectCommand.Parameters.AddWithValue("@Sexo", sexo);
+        da.SelectCommand.Parameters.AddWithValue("@Fecha_Nac", fechanac);
+        da.SelectCommand.Parameters.AddWithValue("@Pais", pais);
+        da.SelectCommand.Parameters.AddWithValue("@Depto", depto);
+        da.SelectCommand.Parameters.AddWithValue("@Telefono", telefono);
+        da.SelectCommand.Parameters.AddWithValue("@Email", email);
+        da.SelectCommand.Parameters.AddWithValue("@Pasword", pasword);
+        da.Fill(ds,"RegistroAgregado");
+        return ds;
+    }
+
+    public DataSet Insertar_Inscripciones(int enviado, int ID_Usuario, int ID_Curso)
+    {
+        da = new SqlDataAdapter("Insertar_Inscripciones",conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@Enviado",enviado);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Usuario",ID_Usuario);
+        da.SelectCommand.Parameters.AddWithValue("@ID_Curso",ID_Curso);
+        da.Fill(ds,"InscripcionRealizada");
+        return ds;
+    }
+
 }

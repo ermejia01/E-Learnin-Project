@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!--<link rel="stylesheet" type="text/css" href="/Estilos/EstilosPrincipalUsuario.css"/>-->
     <link rel="stylesheet" type="text/css" href="/Estilos/EstilosPrincipalUsuario.css"/>
+
     <title>Proyecto Viky</title>
 </head>
 <body>
@@ -21,12 +22,13 @@
             </nav>
             <nav style="float:right; padding-top:10px; margin-right:0;">
                 <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>&nbsp
-                <asp:Button ID="btnCerrarSesion" runat="server" Font-Size="8pt" Height="23px" OnClick="btnCerrarSesion_Click" Text="Cerrar Sesion" Width="115px" />
+                <asp:Button ID="btnCerrarSesion" runat="server" Font-Overline="False" Font-Size="8pt" Text="Cerrar Sesion" OnClick="btnCerrarSesion_Click" />
             </nav>
         </div>
         <div class="ContenedorCursos">
             <div>
                 <h2>Cursos</h2>
+                <asp:Label ID="lblInscripcion" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#000099"></asp:Label>
             </div>
             <div>
                 <div class="OcultarInfo">
@@ -97,15 +99,15 @@
                     </a>
                 </div>
                 <div class="divOcultarInfo" id="DivgdvCategoria3">
-                    <asp:GridView ID="gdvCategoria3" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeader="False">
+                    <asp:GridView ID="gdvCategoria3" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeader="False" OnRowCommand="gdvCategoria3_RowCommand">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:CommandField ButtonType="Button" SelectText="Inscribir" ShowSelectButton="True">
+                            <asp:ButtonField ButtonType="Button" CommandName="Inscribir" Text="Inscribir">
                             <ControlStyle BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" />
-                            </asp:CommandField>
-                            <asp:CommandField ButtonType="Button" SelectText="Ver" ShowSelectButton="True">
+                            </asp:ButtonField>
+                            <asp:ButtonField ButtonType="Button" CommandName="Ver" Text="Ver">
                             <ControlStyle BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" />
-                            </asp:CommandField>
+                            </asp:ButtonField>
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -127,15 +129,15 @@
                     </a>
                 </div>
                 <div class="divOcultarInfo" id="DivgdvCategoria4">
-                    <asp:GridView ID="gdvCategoria4" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeader="False">
+                    <asp:GridView ID="gdvCategoria4" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" ShowHeader="False" OnRowCommand="gdvCategoria4_RowCommand">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:CommandField ButtonType="Button" SelectText="Inscribir" ShowSelectButton="True">
+                            <asp:ButtonField ButtonType="Button" CommandName="Inscribir" Text="Inscribir">
                             <ControlStyle BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" />
-                            </asp:CommandField>
-                            <asp:CommandField ButtonType="Button" SelectText="Ver" ShowSelectButton="True">
+                            </asp:ButtonField>
+                            <asp:ButtonField ButtonType="Button" CommandName="Ver" Text="Ver">
                             <ControlStyle BackColor="White" BorderColor="#00CCFF" BorderStyle="Solid" BorderWidth="1px" />
-                            </asp:CommandField>
+                            </asp:ButtonField>
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

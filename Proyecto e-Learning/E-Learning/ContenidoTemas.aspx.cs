@@ -231,4 +231,10 @@ public partial class ContenidoTemas : System.Web.UI.Page
     {
         Response.Redirect("RegistroUsuario.aspx");
     }
+
+    protected void btnCerrarSesion_Click(object sender, EventArgs e)
+    {
+        Session["Cod_Usuario"] = null;
+        Response.Redirect("~/Login.aspx");
+    }
 }

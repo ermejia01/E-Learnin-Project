@@ -41,6 +41,10 @@
             width: 332px;
             height: 39px;
         }
+        .auto-style14 {
+            width: 332px;
+            height: 47px;
+        }
     </style>
 
 </head>
@@ -156,14 +160,13 @@
                   </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnReportes" runat="server" BackColor="#0E176B" BorderStyle="Solid" Font-Bold="False" Font-Names="Roboto" Font-Size="12pt" ForeColor="White" Height="60px"  Text="Reportes " Width="286px" BorderColor="Aqua" BorderWidth="1px" />
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style13"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style14"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>

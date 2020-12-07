@@ -17,6 +17,7 @@ public partial class CategoriasCursos : System.Web.UI.Page
         if (!IsPostBack)
         {
             Mostrar_Categorias();
+            lblUsuario.Text = Session["Cod_Usuario"].ToString();
         }
     }
 
@@ -104,5 +105,11 @@ public partial class CategoriasCursos : System.Web.UI.Page
     protected void Usuarios_Click(object sender, EventArgs e)
     {
         Response.Redirect("RegistroUsuario.aspx");
+    }
+
+    protected void btnCerrarSesion_Click(object sender, EventArgs e)
+    {
+        Session["Cod_Usuario"] = null;
+        Response.Redirect("~/Login.aspx");
     }
 }
