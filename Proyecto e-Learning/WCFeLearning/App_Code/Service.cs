@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System;
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class Service : IService
@@ -370,6 +371,75 @@ public class Service : IService
     }
 
     #endregion
+
+
+
+    #region Usuarios
+    public DataSet Mostrar_Usuarios()
+    {
+        da = new SqlDataAdapter("Mostrar_usuarios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.Fill(ds, "DataUsuarios");
+        return ds;
+    }
+
+    public DataSet Insertar_Usuarios(string cod_usuario,string nombre_usuario,string apellido_usuario,int edad,string sexo,DateTime fecha_nac,string pais,string depto,string telefono,string email,string clave,string image_usuario,int id_privilegio,DateTime fecharegistro)
+    {
+        da = new SqlDataAdapter("Insertar_usuarios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@codigo_usuario", cod_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", nombre_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@apellido_usuario", apellido_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@edad_usuario", edad);
+        da.SelectCommand.Parameters.AddWithValue("@sexo_usuario", sexo);
+        da.SelectCommand.Parameters.AddWithValue("@fecha_nac_usuario", fecha_nac);
+        da.SelectCommand.Parameters.AddWithValue("@pais_usuario", pais);
+        da.SelectCommand.Parameters.AddWithValue("@depto_usuario", depto);
+        da.SelectCommand.Parameters.AddWithValue("@telefono_usuario", telefono);
+        da.SelectCommand.Parameters.AddWithValue("@email_usuario", email);
+        da.SelectCommand.Parameters.AddWithValue("@pasword_usuario", clave);
+        da.SelectCommand.Parameters.AddWithValue("@imagen_usuario", image_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@id_privilegio_usuario", id_privilegio);
+        da.SelectCommand.Parameters.AddWithValue("@fecharegistro_usuario", fecharegistro);
+        da.Fill(ds, "Usuario Insertado");
+        return ds;
+    }
+
+    public DataSet Modificar_Usuarios(string cod_usuario, string nombre_usuario, string apellido_usuario, int edad, string sexo, DateTime fecha_nac, string pais, string depto, string telefono, string email, string clave, string image_usuario, int id_privilegio, DateTime fecharegistro)
+    {
+        da = new SqlDataAdapter("Modificar_usuarios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("@codigo_usuario", cod_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@nombre_usuario", nombre_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@apellido_usuario", apellido_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@edad_usuario", edad);
+        da.SelectCommand.Parameters.AddWithValue("@sexo_usuario", sexo);
+        da.SelectCommand.Parameters.AddWithValue("@fecha_nac_usuario", fecha_nac);
+        da.SelectCommand.Parameters.AddWithValue("@pais_usuario", pais);
+        da.SelectCommand.Parameters.AddWithValue("@depto_usuario", depto);
+        da.SelectCommand.Parameters.AddWithValue("@telefono_usuario", telefono);
+        da.SelectCommand.Parameters.AddWithValue("@email_usuario", email);
+        da.SelectCommand.Parameters.AddWithValue("@pasword_usuario", clave);
+        da.SelectCommand.Parameters.AddWithValue("@imagen_usuario", image_usuario);
+        da.SelectCommand.Parameters.AddWithValue("@id_privilegio_usuario", id_privilegio);
+        da.SelectCommand.Parameters.AddWithValue("@fecharegistro_usuario", fecharegistro);
+        da.Fill(ds, "Usuario modificado");
+
+        return ds;
+    }
+
+    public DataSet Buscar_Usuarios(string cod_usuario)
+    {
+        da = new SqlDataAdapter("Buscar_usuarios", conexion);
+        da.SelectCommand.CommandType = CommandType.StoredProcedure;
+        da.SelectCommand.Parameters.AddWithValue("cod_usuario", cod_usuario); 
+        da.Fill(ds, "Usuario Encontrado");
+        return ds;
+    }
+
+    #endregion
+
+
 
 
     public DataSet Mostrar_Categorias()

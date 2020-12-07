@@ -2,9 +2,9 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:5538/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:5538/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:5538/Service.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://localhost:49505/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49505/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:49505/Service.svc?xsd=xsd2" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_Insertar_usuario_InputMessage">
@@ -157,78 +157,6 @@
   <wsdl:message name="IService_Buscar_Contenidos_OutputMessage">
     <wsdl:part name="parameters" element="tns:Buscar_ContenidosResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_Mostrar_Cursos_InputMessage">
-    <wsdl:part name="parameters" element="tns:Mostrar_Cursos" />
-  </wsdl:message>
-  <wsdl:message name="IService_Mostrar_Cursos_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Mostrar_CursosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Insertar_Cursos_InputMessage">
-    <wsdl:part name="parameters" element="tns:Insertar_Cursos" />
-  </wsdl:message>
-  <wsdl:message name="IService_Insertar_Cursos_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Insertar_CursosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Modificar_Cursos_InputMessage">
-    <wsdl:part name="parameters" element="tns:Modificar_Cursos" />
-  </wsdl:message>
-  <wsdl:message name="IService_Modificar_Cursos_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Modificar_CursosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Buscar_Cursos_InputMessage">
-    <wsdl:part name="parameters" element="tns:Buscar_Cursos" />
-  </wsdl:message>
-  <wsdl:message name="IService_Buscar_Cursos_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Buscar_CursosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Mostrar_Temas_InputMessage">
-    <wsdl:part name="parameters" element="tns:Mostrar_Temas" />
-  </wsdl:message>
-  <wsdl:message name="IService_Mostrar_Temas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Mostrar_TemasResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Insertar_Temas_InputMessage">
-    <wsdl:part name="parameters" element="tns:Insertar_Temas" />
-  </wsdl:message>
-  <wsdl:message name="IService_Insertar_Temas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Insertar_TemasResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Modificar_Temas_InputMessage">
-    <wsdl:part name="parameters" element="tns:Modificar_Temas" />
-  </wsdl:message>
-  <wsdl:message name="IService_Modificar_Temas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Modificar_TemasResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Buscar_Temas_InputMessage">
-    <wsdl:part name="parameters" element="tns:Buscar_Temas" />
-  </wsdl:message>
-  <wsdl:message name="IService_Buscar_Temas_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Buscar_TemasResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Mostrar_Privilegios_InputMessage">
-    <wsdl:part name="parameters" element="tns:Mostrar_Privilegios" />
-  </wsdl:message>
-  <wsdl:message name="IService_Mostrar_Privilegios_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Mostrar_PrivilegiosResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Insertar_Privilegio_InputMessage">
-    <wsdl:part name="parameters" element="tns:Insertar_Privilegio" />
-  </wsdl:message>
-  <wsdl:message name="IService_Insertar_Privilegio_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Insertar_PrivilegioResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Modificar_Privilegio_InputMessage">
-    <wsdl:part name="parameters" element="tns:Modificar_Privilegio" />
-  </wsdl:message>
-  <wsdl:message name="IService_Modificar_Privilegio_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Modificar_PrivilegioResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService_Buscar_Privilegio_InputMessage">
-    <wsdl:part name="parameters" element="tns:Buscar_Privilegio" />
-  </wsdl:message>
-  <wsdl:message name="IService_Buscar_Privilegio_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Buscar_PrivilegioResponse" />
-  </wsdl:message>
   <wsdl:message name="IService_Mostrar_Contenidos_XTemas_InputMessage">
     <wsdl:part name="parameters" element="tns:Mostrar_Contenidos_XTemas" />
   </wsdl:message>
@@ -359,54 +287,6 @@
     <wsdl:operation name="Buscar_Contenidos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Contenidos" message="tns:IService_Buscar_Contenidos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_ContenidosResponse" message="tns:IService_Buscar_Contenidos_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Mostrar_Cursos">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Cursos" message="tns:IService_Mostrar_Cursos_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_CursosResponse" message="tns:IService_Mostrar_Cursos_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Insertar_Cursos">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Cursos" message="tns:IService_Insertar_Cursos_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_CursosResponse" message="tns:IService_Insertar_Cursos_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Modificar_Cursos">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Modificar_Cursos" message="tns:IService_Modificar_Cursos_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Modificar_CursosResponse" message="tns:IService_Modificar_Cursos_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Buscar_Cursos">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Cursos" message="tns:IService_Buscar_Cursos_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_CursosResponse" message="tns:IService_Buscar_Cursos_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Mostrar_Temas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Temas" message="tns:IService_Mostrar_Temas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_TemasResponse" message="tns:IService_Mostrar_Temas_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Insertar_Temas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Temas" message="tns:IService_Insertar_Temas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_TemasResponse" message="tns:IService_Insertar_Temas_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Modificar_Temas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Modificar_Temas" message="tns:IService_Modificar_Temas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Modificar_TemasResponse" message="tns:IService_Modificar_Temas_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Buscar_Temas">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Temas" message="tns:IService_Buscar_Temas_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_TemasResponse" message="tns:IService_Buscar_Temas_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Mostrar_Privilegios">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Privilegios" message="tns:IService_Mostrar_Privilegios_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Mostrar_PrivilegiosResponse" message="tns:IService_Mostrar_Privilegios_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Insertar_Privilegio">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Insertar_Privilegio" message="tns:IService_Insertar_Privilegio_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Insertar_PrivilegioResponse" message="tns:IService_Insertar_Privilegio_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Modificar_Privilegio">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Modificar_Privilegio" message="tns:IService_Modificar_Privilegio_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Modificar_PrivilegioResponse" message="tns:IService_Modificar_Privilegio_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Buscar_Privilegio">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/Buscar_Privilegio" message="tns:IService_Buscar_Privilegio_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/Buscar_PrivilegioResponse" message="tns:IService_Buscar_Privilegio_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Mostrar_Contenidos_XTemas">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Mostrar_Contenidos_XTemas" message="tns:IService_Mostrar_Contenidos_XTemas_InputMessage" />
@@ -656,114 +536,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Mostrar_Cursos">
-      <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Cursos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Insertar_Cursos">
-      <soap:operation soapAction="http://tempuri.org/IService/Insertar_Cursos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Modificar_Cursos">
-      <soap:operation soapAction="http://tempuri.org/IService/Modificar_Cursos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Buscar_Cursos">
-      <soap:operation soapAction="http://tempuri.org/IService/Buscar_Cursos" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Mostrar_Temas">
-      <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Temas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Insertar_Temas">
-      <soap:operation soapAction="http://tempuri.org/IService/Insertar_Temas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Modificar_Temas">
-      <soap:operation soapAction="http://tempuri.org/IService/Modificar_Temas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Buscar_Temas">
-      <soap:operation soapAction="http://tempuri.org/IService/Buscar_Temas" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Mostrar_Privilegios">
-      <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Privilegios" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Insertar_Privilegio">
-      <soap:operation soapAction="http://tempuri.org/IService/Insertar_Privilegio" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Modificar_Privilegio">
-      <soap:operation soapAction="http://tempuri.org/IService/Modificar_Privilegio" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Buscar_Privilegio">
-      <soap:operation soapAction="http://tempuri.org/IService/Buscar_Privilegio" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="Mostrar_Contenidos_XTemas">
       <soap:operation soapAction="http://tempuri.org/IService/Mostrar_Contenidos_XTemas" style="document" />
       <wsdl:input>
@@ -812,7 +584,7 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
-      <soap:address location="http://localhost:5538/Service.svc" />
+      <soap:address location="http://localhost:49505/Service.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
