@@ -166,4 +166,9 @@ public partial class RegistroUsuario : System.Web.UI.Page
     {
         Response.Redirect("ContenidoTemas.aspx");
     }
+
+    protected void Privilegios_click(object sender, EventArgs e)
+    {
+        Response.Redirect("Privilegios.aspx");
+    }
 }

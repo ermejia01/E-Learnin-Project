@@ -105,4 +105,9 @@ public partial class CategoriasCursos : System.Web.UI.Page
     {
         Response.Redirect("RegistroUsuario.aspx");
     }
+
+    protected void Privilegios_click(object sender, EventArgs e)
+    {
+        Response.Redirect("Privilegios.aspx");
+    }
 }
